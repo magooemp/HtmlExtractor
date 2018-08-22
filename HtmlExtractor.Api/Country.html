@@ -1,0 +1,58 @@
+<meta charset="ISO-8859-1">
+<html>
+<head>
+	<!-- bootstrap & Jquery :) -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Api Requisitions  -->
+	<script src="js/serviceApi.js"></script>
+
+	<!-- Basic functions for this html  -->
+	<script src="js/country.js"></script>
+
+</head>
+
+<body>
+	<!-- 'Simple' navbar -->
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="Country.html">CIA</a>
+			</div>
+		</div>
+	</nav>
+	<div class="panel panel-default">
+		<div class="panel-body">Example to use the CiaFactBook Ripper Web API<br />The Api will read the official Cia information site and transform it to Json, Xml or other readable format.<br /> There are 2 Api's, the first one will return the list of countries, and the other will return the all information about specific country.</div>
+	</div>
+
+	<div class="container">
+		<div style="padding: 20px;">
+			<h4>Select Country:</h4>
+			<select class="" id="ddlCountry" onchange="GetData(this.value)">
+				<!-- This node will filled from http://casos.info/htmlextractor/api/cia/countries -->
+				<!-- Example:
+				<option value="br">BRAZIL</option>
+				<option value="us">EUA</option>
+				<option value="es">EL SALVADOR</option>-->
+			</select>
+		</div>
+
+		<table class="table">
+			<!-- This node will filled from http://casos.info/htmlextractor/api/cia/{CountryCode} -->
+			<thead>
+				<tr>
+					<td>COUNTRY</td>
+					<td>CATEGORY</td>
+					<td>TITLE</td>
+					<td>VALUE</td>
+				</tr>
+			</thead>
+			<tbody id="tablecontent"></tbody>
+		</table>
+	</div>
+</body>
+
+</html>
