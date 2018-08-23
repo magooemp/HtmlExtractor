@@ -23,6 +23,13 @@ namespace HtmlExtractor.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-        }
+			// I am testing... // This code isn't useful..
+			config.Routes.MapHttpRoute(
+			   name: "DefaultApistring",
+			   routeTemplate: "api/{controller}/outrarota/{nome}",
+			   defaults: new { nome = RouteParameter.Optional }
+		   );
+			// -------
+		}
     }
 }
